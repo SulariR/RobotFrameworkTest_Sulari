@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20240214 15:05:46.369" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="C:\development\robot-scripts\SauceDemo_TestAutomationRF\tests">
+<suite id="s1-s1" name="SauceDemo" source="C:\development\robot-scripts\SauceDemo_TestAutomationRF\tests\SauceDemo.robot">
+<test id="s1-s1-t1" name="User can sign in and order an item" line="22">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240214 15:05:49.166" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20240214 15:05:49.166" endtime="20240214 15:06:07.333"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240214 15:06:07.333" endtime="20240214 15:06:07.491"/>
+</kw>
+<status status="PASS" starttime="20240214 15:05:49.166" endtime="20240214 15:06:07.491"/>
+</kw>
+<kw name="Load website" library="SauceDemoApp">
+<kw name="Load" library="SignInPage">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240214 15:06:07.494" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20240214 15:06:07.494" endtime="20240214 15:06:09.414"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:07.493" endtime="20240214 15:06:09.414"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:07.492" endtime="20240214 15:06:09.414"/>
+</kw>
+<kw name="Sign in to website" library="SauceDemoApp">
+<kw name="SignIn with credentials" library="SignInPage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${USERNAME_TEXTFIELD}</arg>
+<arg>20</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240214 15:06:09.416" endtime="20240214 15:06:09.933"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${USERNAME_TEXTFIELD}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:09.933" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20240214 15:06:09.933" endtime="20240214 15:06:10.526"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASSWORD_TEXTFIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:10.542" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20240214 15:06:10.526" endtime="20240214 15:06:10.728"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>SignInPage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:10.966" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="SignInPage.png"&gt;&lt;img src="SignInPage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:10.728" endtime="20240214 15:06:10.966"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:10.966" level="INFO">Clicking button 'id=login-button'.</msg>
+<status status="PASS" starttime="20240214 15:06:10.966" endtime="20240214 15:06:11.430"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:09.416" endtime="20240214 15:06:11.431"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:09.415" endtime="20240214 15:06:11.431"/>
+</kw>
+<kw name="Select product and add to cart" library="SauceDemoApp">
+<kw name="Select product" library="HomePage">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>HomePage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:11.730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="HomePage.png"&gt;&lt;img src="HomePage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:11.433" endtime="20240214 15:06:11.730"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${PRODUCT}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240214 15:06:11.730" endtime="20240214 15:06:12.182"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PRODUCT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:12.182" level="INFO">Clicking element 'id=add-to-cart-sauce-labs-fleece-jacket'.</msg>
+<status status="PASS" starttime="20240214 15:06:12.182" endtime="20240214 15:06:12.260"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Product_added_to_cart.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:12.511" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Product_added_to_cart.png"&gt;&lt;img src="Product_added_to_cart.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:12.261" endtime="20240214 15:06:12.511"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:11.432" endtime="20240214 15:06:12.511"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:11.432" endtime="20240214 15:06:12.511"/>
+</kw>
+<kw name="View shopping cart" library="SauceDemoApp">
+<kw name="Click on shopping cart" library="HomePage">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${SHOPPINGCART_LINK}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240214 15:06:12.511" endtime="20240214 15:06:12.822"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${SHOPPINGCART_LINK}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:12.822" level="INFO">Clicking link 'class=shopping_cart_link'.</msg>
+<status status="PASS" starttime="20240214 15:06:12.822" endtime="20240214 15:06:12.964"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:12.511" endtime="20240214 15:06:12.964"/>
+</kw>
+<kw name="Validate cart page" library="ShoppingCartPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CART_LABEL}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:13.006" level="INFO">Current page contains text 'Your Cart'.</msg>
+<status status="PASS" starttime="20240214 15:06:12.965" endtime="20240214 15:06:13.006"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Sauce Labs Fleece Jacket</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:13.033" level="INFO">Current page contains text 'Sauce Labs Fleece Jacket'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.007" endtime="20240214 15:06:13.033"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Shopping_cart.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:13.208" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Shopping_cart.png"&gt;&lt;img src="Shopping_cart.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:13.033" endtime="20240214 15:06:13.208"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:12.964" endtime="20240214 15:06:13.208"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:12.511" endtime="20240214 15:06:13.208"/>
+</kw>
+<kw name="Proceed with checkout" library="SauceDemoApp">
+<kw name="Click on checkout" library="CheckoutPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON_CARTPAGE}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:13.227" level="INFO">Clicking button 'id=checkout'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.227" endtime="20240214 15:06:13.351"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:13.226" endtime="20240214 15:06:13.351"/>
+</kw>
+<kw name="Validate checkout page" library="CheckoutPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${CHECKOUT_PAGELABLE}</arg>
+<arg>10</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:13.380" level="INFO">Current page contains text 'Checkout: Your Information'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.351" endtime="20240214 15:06:13.380"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Checkout_information_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:13.562" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Checkout_information_page.png"&gt;&lt;img src="Checkout_information_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:13.380" endtime="20240214 15:06:13.562"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:13.351" endtime="20240214 15:06:13.563"/>
+</kw>
+<kw name="Add Customer information" library="CheckoutPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${FIRST_NAME_TEXTFIELD}</arg>
+<arg>${FIRSTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:13.564" level="INFO">Typing text 'Alex' into text field 'id=first-name'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.563" endtime="20240214 15:06:13.721"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LAST_NAME_TEXTFIELD}</arg>
+<arg>${LASTNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:13.721" level="INFO">Typing text 'Smith' into text field 'id=last-name'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.721" endtime="20240214 15:06:13.903"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${POSTAL_CODE_TEXTFIELD}</arg>
+<arg>${POSTAL_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:13.905" level="INFO">Typing text '3325' into text field 'id=postal-code'.</msg>
+<status status="PASS" starttime="20240214 15:06:13.904" endtime="20240214 15:06:14.068"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${CONTINUE_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:14.069" level="INFO">Clicking button 'id=continue'.</msg>
+<status status="PASS" starttime="20240214 15:06:14.069" endtime="20240214 15:06:14.200"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:13.563" endtime="20240214 15:06:14.200"/>
+</kw>
+<kw name="Complete order" library="CheckoutPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Checkout: Overview</arg>
+<arg>10</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:14.236" level="INFO">Current page contains text 'Checkout: Overview'.</msg>
+<status status="PASS" starttime="20240214 15:06:14.201" endtime="20240214 15:06:14.237"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Checkout_Overview.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:14.396" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Checkout_Overview.png"&gt;&lt;img src="Checkout_Overview.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:14.237" endtime="20240214 15:06:14.396"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${FINISH_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 15:06:14.397" level="INFO">Clicking button 'id=finish'.</msg>
+<status status="PASS" starttime="20240214 15:06:14.396" endtime="20240214 15:06:14.528"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Checkout: Complete!</arg>
+<arg>10</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:14.564" level="INFO">Current page contains text 'Checkout: Complete!'.</msg>
+<status status="PASS" starttime="20240214 15:06:14.529" endtime="20240214 15:06:14.564"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Thank you for your order!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20240214 15:06:14.580" level="INFO">Current page contains text 'Thank you for your order!'.</msg>
+<status status="PASS" starttime="20240214 15:06:14.564" endtime="20240214 15:06:14.580"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Order_complete.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240214 15:06:14.730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Order_complete.png"&gt;&lt;img src="Order_complete.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240214 15:06:14.580" endtime="20240214 15:06:14.730"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:14.200" endtime="20240214 15:06:14.730"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:13.226" endtime="20240214 15:06:14.730"/>
+</kw>
+<kw name="End Web test" library="Common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240214 15:06:14.730" endtime="20240214 15:06:17.760"/>
+</kw>
+<status status="PASS" starttime="20240214 15:06:14.730" endtime="20240214 15:06:17.760"/>
+</kw>
+<doc>User signs in, add product to cart, proceed to checkout and finish order</doc>
+<tag>teste2e</tag>
+<status status="PASS" starttime="20240214 15:05:49.166" endtime="20240214 15:06:17.760"/>
+</test>
+<doc>This is end to end test automation for SaceDemo.com</doc>
+<status status="PASS" starttime="20240214 15:05:46.528" endtime="20240214 15:06:17.760"/>
+</suite>
+<status status="PASS" starttime="20240214 15:05:46.369" endtime="20240214 15:06:17.775"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">teste2e</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="SauceDemo">Tests.SauceDemo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
